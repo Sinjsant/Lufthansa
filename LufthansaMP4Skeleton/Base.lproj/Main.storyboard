@@ -39,7 +39,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="o5T-KP-1OZ"/>
                     <connections>
-                        <segue destination="SVQ-7T-m86" kind="show" id="poN-2b-wpZ"/>
+                        <segue destination="1us-0U-nmz" kind="show" identifier="toAirportInfo" id="8Fc-sc-snc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gK2-Bk-8U8" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -100,7 +100,7 @@
         <scene sceneID="G4E-89-uha">
             <objects>
                 <viewController id="KJ8-RV-3pj" customClass="RequestPageViewController" customModule="LufthansaMP4Skeleton" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="GAN-VP-yg9" customClass="V">
+                    <view key="view" contentMode="scaleToFill" id="GAN-VP-yg9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -125,10 +125,28 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="xjH-k5-GiN"/>
                     </view>
+                    <connections>
+                        <segue destination="1us-0U-nmz" kind="show" identifier="toAirportInfo" id="KPE-zE-Hcl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bG4-5i-Ubk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1118" y="-616"/>
+            <point key="canvasLocation" x="519" y="-616"/>
+        </scene>
+        <!--Airport Info View Controller-->
+        <scene sceneID="ugE-vS-CKR">
+            <objects>
+                <viewController id="1us-0U-nmz" customClass="AirportInfoViewController" customModule="LufthansaMP4Skeleton" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Cry-BL-d5z">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="M4B-Uv-cXV"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hgx-Uy-ihy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1554" y="-3"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="BRa-4D-Plc">
@@ -151,6 +169,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="LIQ-p2-2o0"/>
+        <segue reference="8Fc-sc-snc"/>
     </inferredMetricsTieBreakers>
 </document>

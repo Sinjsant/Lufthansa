@@ -50,7 +50,7 @@ class LufthansaAPIClient {
             }
             
             let json = JSON(response.result.value)
-            let flight = Flight(data: json)
+            let flight = Flight(data: json["FlightStatusResource"]["Flights"]["Flight"])
             
             completion(flight)
          }
@@ -72,6 +72,29 @@ class LufthansaAPIClient {
             
             completion(airport)
         }
+    }
+    
+    static func getArrivalFlights(from: String, date: String, completion: @escaping([Flight]) -> ()) {
+        let requestURL = "https://api.lufthansa.com/v1/operations/flightstatus/arrivals/\(from)/\(date)T12:00"
+        let headers: HTTPHeaders = ["Accept": "application/json", "Authorization": "Bearer \(self.authToken!)"]
         
+        Alamofire.request(requestURL, headers: headers).responseJSON { response in
+            guard response.result.isSuccess else {
+                print(response.result.error.debugDescription)
+                return
+            }
+            var allFlights: [Flight] = []
+            let json = JSON(response.result.value)
+            let flightArray = json["FlightStatusResource"]["Flights"]["Flight"].arrayValue
+            
+            for singleData in flightArray {
+                print(singleData["Departure"]["AirportCode"].stringValue)
+                allFlights.append(Flight(data: singleData))
+            }
+           
+            completion(allFlights)
+            
+        }
+
     }
 }

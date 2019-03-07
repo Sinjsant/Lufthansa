@@ -26,17 +26,16 @@ class Flight {
     
     init(data: JSON) {
         fullJSON = data
-        let smallJson = data["FlightStatusResource"]["Flights"]["Flight"]
-        timeStatus = smallJson["Departure"]["TimeStatus"]["Definition"].stringValue
-        startAirport = smallJson["Departure"]["AirportCode"].stringValue
-        endAirport = smallJson["Arrival"]["AirportCode"].stringValue
-        startTime = String(smallJson["Departure"]["ActualTimeLocal"]["DateTime"].stringValue.suffix(5))
-        endTime = String(smallJson["Arrival"]["ActualTimeLocal"]["DateTime"].stringValue.suffix(5))
-        planeType = smallJson["Equipment"]["AircraftCode"].stringValue
-        startTerminal = smallJson["Departure"]["Terminal"]["Name"].stringValue
-        endTerminal = smallJson["Arrival"]["Terminal"]["Name"].stringValue
-        startGate = smallJson["Departure"]["Terminal"]["Gate"].stringValue
-        endGate = smallJson["Arrival"]["Terminal"]["Gate"].stringValue
+        timeStatus = data["Departure"]["TimeStatus"]["Definition"].stringValue
+        startAirport = data["Departure"]["AirportCode"].stringValue
+        endAirport = data["Arrival"]["AirportCode"].stringValue
+        startTime = String(data["Departure"]["ActualTimeLocal"]["DateTime"].stringValue.suffix(5))
+        endTime = String(data["Arrival"]["ActualTimeLocal"]["DateTime"].stringValue.suffix(5))
+        planeType = data["Equipment"]["AircraftCode"].stringValue
+        startTerminal = data["Departure"]["Terminal"]["Name"].stringValue
+        endTerminal = data["Arrival"]["Terminal"]["Name"].stringValue
+        startGate = data["Departure"]["Terminal"]["Gate"].stringValue
+        endGate = data["Arrival"]["Terminal"]["Gate"].stringValue
  
     }
     

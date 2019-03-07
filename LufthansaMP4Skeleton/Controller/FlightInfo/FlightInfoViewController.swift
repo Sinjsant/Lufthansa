@@ -14,6 +14,7 @@ class FlightInfoViewController: UIViewController {
     var flight: Flight?
     var flightNum = ""
     var flightTime = ""
+    var selectedAirport = ""
     var favoriteButton: UIBarButtonItem!
     var planeIcon: UIImageView!
     var statusLabel: UILabel!
@@ -76,6 +77,9 @@ class FlightInfoViewController: UIViewController {
         startAirportLabel.font = UIFont(name: "ProximaNova-Bold", size: 40)
         startAirportLabel.text = "\(flight!.startAirport)"
         startAirportLabel.textColor = .white
+        let tap1 = UITapGestureRecognizer(target: self, action: #selector(self.airportSelected))
+        startAirportLabel.addGestureRecognizer(tap1)
+        startAirportLabel.isUserInteractionEnabled = true
         view.addSubview(startAirportLabel)
         
         endAirportLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
@@ -84,6 +88,9 @@ class FlightInfoViewController: UIViewController {
         endAirportLabel.font = UIFont(name: "ProximaNova-Bold", size: 40)
         endAirportLabel.text = "\(flight!.endAirport)"
         endAirportLabel.textColor = .white
+         let tap2 = UITapGestureRecognizer(target: self, action: #selector(self.airportSelected))
+        endAirportLabel.addGestureRecognizer(tap2)
+        endAirportLabel.isUserInteractionEnabled = true
         view.addSubview(endAirportLabel)
         
         startTimeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 100, height: 30))
@@ -139,13 +146,6 @@ class FlightInfoViewController: UIViewController {
         view.addSubview(mapView)
         addAirports()
         centerMap()
-        
-        
-        
-        
-        
-        
-        
 
         // Do any additional setup after loading the view.
     }
@@ -167,8 +167,6 @@ class FlightInfoViewController: UIViewController {
         }
         self.navigationItem.rightBarButtonItem = favoriteButton
         
-        
-    
     }
     
     @objc func favorite() {
@@ -189,25 +187,36 @@ class FlightInfoViewController: UIViewController {
     func addAirports() {
         LufthansaAPIClient.getAirportLocation(name: flight!.startAirport) { airport in
             self.mapView.addAnnotation(airport)
-            print(airport.title)
             self.airportArray.append(airport)
         }
         
         LufthansaAPIClient.getAirportLocation(name: flight!.endAirport) { airport in
             self.mapView.addAnnotation(airport)
-            print(airport.title)
             self.airportArray.append(airport)
         }
     }
     
     func centerMap() {
-        var location = CLLocationCoordinate2D(latitude: 51.1657, longitude: 10.4515)
-        var region = MKCoordinateRegion(center: location, latitudinalMeters: 1000000, longitudinalMeters: 1000000)
+        let location = CLLocationCoordinate2D(latitude: 48.1657, longitude: 5.00)
+        let region = MKCoordinateRegion(center: location, latitudinalMeters: 3000000, longitudinalMeters: 3000000)
         self.mapView.setRegion(region, animated : true)
     }
     
+    @objc func airportSelected(_ sender: UITapGestureRecognizer) {
+        selectedAirport = (sender.view as? UILabel)!.text!
+        performSegue(withIdentifier: "toAirportInfo", sender: self)
+    }
     
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toAirportInfo" {
+            let resultVC = segue.destination as! AirportInfoViewController
+            resultVC.airportName = selectedAirport
+        }
+    }
+    
+    
+   
     /*
     // MARK: - Navigation
 
