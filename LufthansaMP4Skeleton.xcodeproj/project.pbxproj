@@ -13,6 +13,8 @@
 		5964E3712231BB6C00AB4BDD /* AirportInfoViewController-Map.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964E3702231BB6C00AB4BDD /* AirportInfoViewController-Map.swift */; };
 		5964E3732231C54200AB4BDD /* AirportInfoViewController-Table.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964E3722231C54200AB4BDD /* AirportInfoViewController-Table.swift */; };
 		5964E3752231C6E600AB4BDD /* AirportInfoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5964E3742231C6E600AB4BDD /* AirportInfoTableViewCell.swift */; };
+		5979759122344BDE002078CF /* RequestPageViewController-SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5979759022344BDE002078CF /* RequestPageViewController-SetupUI.swift */; };
+		59C2C1592234420800E6DE13 /* FlightInfoViewController-SetupUI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59C2C1582234420800E6DE13 /* FlightInfoViewController-SetupUI.swift */; };
 		59E8659A222F60BF004F542F /* proxima-nova-bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59E86599222F5F28004F542F /* proxima-nova-bold.ttf */; };
 		59E8659B222F60C2004F542F /* proxima-nova-light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59E86597222F5F28004F542F /* proxima-nova-light.ttf */; };
 		59E8659C222F60C4004F542F /* proxima-nova-regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 59E86596222F5F28004F542F /* proxima-nova-regular.ttf */; };
@@ -35,6 +37,8 @@
 		5964E3702231BB6C00AB4BDD /* AirportInfoViewController-Map.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AirportInfoViewController-Map.swift"; sourceTree = "<group>"; };
 		5964E3722231C54200AB4BDD /* AirportInfoViewController-Table.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AirportInfoViewController-Table.swift"; sourceTree = "<group>"; };
 		5964E3742231C6E600AB4BDD /* AirportInfoTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportInfoTableViewCell.swift; sourceTree = "<group>"; };
+		5979759022344BDE002078CF /* RequestPageViewController-SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequestPageViewController-SetupUI.swift"; sourceTree = "<group>"; };
+		59C2C1582234420800E6DE13 /* FlightInfoViewController-SetupUI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FlightInfoViewController-SetupUI.swift"; sourceTree = "<group>"; };
 		59E86596222F5F28004F542F /* proxima-nova-regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proxima-nova-regular.ttf"; sourceTree = "<group>"; };
 		59E86597222F5F28004F542F /* proxima-nova-light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proxima-nova-light.ttf"; sourceTree = "<group>"; };
 		59E86598222F5F28004F542F /* proxima-nova-semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "proxima-nova-semibold.ttf"; sourceTree = "<group>"; };
@@ -94,6 +98,22 @@
 			path = AirportInfo;
 			sourceTree = "<group>";
 		};
+		5979759222344C07002078CF /* RequestPage */ = {
+			isa = PBXGroup;
+			children = (
+				5979759022344BDE002078CF /* RequestPageViewController-SetupUI.swift */,
+			);
+			path = RequestPage;
+			sourceTree = "<group>";
+		};
+		59C2C15A223442B700E6DE13 /* FlightInfo */ = {
+			isa = PBXGroup;
+			children = (
+				59C2C1582234420800E6DE13 /* FlightInfoViewController-SetupUI.swift */,
+			);
+			path = FlightInfo;
+			sourceTree = "<group>";
+		};
 		59E86591222F5630004F542F /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +126,8 @@
 		59E86592222F5634004F542F /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5979759222344C07002078CF /* RequestPage */,
+				59C2C15A223442B700E6DE13 /* FlightInfo */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -321,12 +343,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5979759122344BDE002078CF /* RequestPageViewController-SetupUI.swift in Sources */,
 				9F4CF6C5222A7BF000B8E242 /* LufthansaAPIClient.swift in Sources */,
 				5964E3752231C6E600AB4BDD /* AirportInfoTableViewCell.swift in Sources */,
 				59602EBB222FCFBE00D884BA /* FlightInfoViewController-Map.swift in Sources */,
 				59E8659F222F7AA2004F542F /* FlightInfoViewController.swift in Sources */,
 				59602EBD222FD15C00D884BA /* Airport.swift in Sources */,
 				9F4CF6C7222A7C4300B8E242 /* Flight.swift in Sources */,
+				59C2C1592234420800E6DE13 /* FlightInfoViewController-SetupUI.swift in Sources */,
 				9F4CF6B5222A7BB700B8E242 /* RequestPageViewController.swift in Sources */,
 				5964E36F2231B0DA00AB4BDD /* AirportInfoViewController.swift in Sources */,
 				5964E3732231C54200AB4BDD /* AirportInfoViewController-Table.swift in Sources */,
@@ -479,13 +503,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SVB4USWED5;
+				DEVELOPMENT_TEAM = 5887WFAJ2A;
 				INFOPLIST_FILE = LufthansaMP4Skeleton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.meetme.LufthansaMP4Skeleton;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mdb.sinjonsantosLufthansaMP4Skeleton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -498,13 +522,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = SVB4USWED5;
+				DEVELOPMENT_TEAM = 5887WFAJ2A;
 				INFOPLIST_FILE = LufthansaMP4Skeleton/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.meetme.LufthansaMP4Skeleton;
+				PRODUCT_BUNDLE_IDENTIFIER = com.mdb.sinjonsantosLufthansaMP4Skeleton;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
