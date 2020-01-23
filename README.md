@@ -1,5 +1,5 @@
 # MDB-Lufthansa
-Mini Project 4 created for MDB's Spring 2019 iOS Training Program. A mobile app that interfaces with Lufthansa's  OpenAPI. Users can input a flight code and date, and get information about times, relevant locations, and flight status.
+A mobile app that interfaces with Lufthansa's  OpenAPI. Users can input a flight code and date, and get information about times, relevant locations, and flight status.
 
 
 
