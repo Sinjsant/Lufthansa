@@ -1,4 +1,4 @@
-# MDB-Lufthansa
+# Lufthansa
 A mobile app that interfaces with Lufthansa's  OpenAPI. Users can input a flight code and date, and get information about times, relevant locations, and flight status.
 
 
